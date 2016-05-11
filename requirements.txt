@@ -1,1 +1,4 @@
+pingo==0.2.0
 pyalsaaudio==0.8.2
+PyMata==2.12
+pyserial==3.0.1
