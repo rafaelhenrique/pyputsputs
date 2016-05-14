@@ -1,0 +1,3 @@
+[submodule "pingo-py"]
+	path = pingo-py
+	url = git@github.com:pingo-io/pingo-py.git
