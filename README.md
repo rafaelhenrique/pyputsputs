@@ -38,7 +38,6 @@ $ mkvirtualenv -p /usr/bin/python2.7 pyputsputs
 
 Enter on pingo-io directory and installs pingo ([recommended by developers](http://www.pingo.io/docs/#installing-from-github)). 
 
-**If you get an empty directory, clone the ([project](https://github.com/pingo-io/pingo-py/tree/091192f0381cd107685b55a258024be8c88e38cc)) and run the following commands**:
 
 ```
 $ cd pingo-io
@@ -57,9 +56,20 @@ Connect your arduino into usb port and then run:
 $ python run.py
 
 ```
-## Problems
+## Possible Problems
+
+**StandardFirmata don't work**
+
 If you're having some problems with the StandardFirmata, add the SoftwareSerial header with the code inclues:
 
 ```
 #include <SoftwareSerial.h>
+```
+
+**pingo-io is empty**
+
+If the pingo-io is an empty directory, clone the ([project](https://github.com/pingo-io/pingo-py/tree/091192f0381cd107685b55a258024be8c88e38cc)) and then run the following commands:
+```
+$ cd pingo-io
+$ python setup.py develop
 ```
