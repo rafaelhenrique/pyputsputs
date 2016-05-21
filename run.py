@@ -72,23 +72,7 @@ if __name__ == "__main__":
             # if wave of max is 32 this is works
             # if not, you need recalibrate mic
             wave = audioop.max(data, 2) / 1000
-            led_index = wave / 6.
+            led_index = int(wave / 6.) + 1
 
-            if led_index > 5:
-                blink_leds(ordered_leds, .0001)
-                print("#"*6)
-            elif 5 > led_index > 4:
-                blink_leds(ordered_leds[0:5], .0001)
-                print("#"*5)
-            elif 4 > led_index > 3:
-                blink_leds(ordered_leds[0:4], .0001)
-                print("#"*4)
-            elif 3 > led_index > 2:
-                blink_leds(ordered_leds[0:3], .0001)
-                print("#"*3)
-            elif 2 > led_index > 1:
-                blink_leds(ordered_leds[0:2], .0001)
-                print("#"*2)
-            elif 1 > led_index > 0:
-                blink_leds(ordered_leds[0:1], .0001)
-                print("#"*1)
+            blink_leds(ordered_leds[0:led_index], .0001)
+            print("#" * led_index)
