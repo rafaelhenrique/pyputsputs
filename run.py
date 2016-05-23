@@ -62,8 +62,7 @@ def microphone(rate=44100, channel=1, periodsize=160):
     return mic
 
 if __name__ == "__main__":
-    ordered_leds = [board.pins[11], board.pins[10], board.pins[9],
-                    board.pins[6], board.pins[5], board.pins[3]]
+    ordered_leds = [board.pins[i] for i in [11, 10, 9, 6, 5, 3]]
     mode_pins_out(ordered_leds)
 
     mic = microphone()
