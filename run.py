@@ -31,7 +31,7 @@ def blink(led, time_interval):
     led.low()
 
 
-def blink_leds(leds, time_interval):
+def blink_leds(leds, time_interval=.0001):
     """Hi leds by time"""
     for led in leds:
         led.hi()
@@ -75,20 +75,20 @@ if __name__ == "__main__":
             led_index = wave / 6.
 
             if led_index > 5:
-                blink_leds(ordered_leds, .0001)
-                print("#"*6)
+                blink_leds(ordered_leds)
+                print("#" * 6)
             elif 5 > led_index > 4:
-                blink_leds(ordered_leds[0:5], .0001)
-                print("#"*5)
+                blink_leds(ordered_leds[0:5])
+                print("#" * 5)
             elif 4 > led_index > 3:
-                blink_leds(ordered_leds[0:4], .0001)
-                print("#"*4)
+                blink_leds(ordered_leds[0:4])
+                print("#" * 4)
             elif 3 > led_index > 2:
-                blink_leds(ordered_leds[0:3], .0001)
-                print("#"*3)
+                blink_leds(ordered_leds[0:3])
+                print("#" * 3)
             elif 2 > led_index > 1:
-                blink_leds(ordered_leds[0:2], .0001)
-                print("#"*2)
+                blink_leds(ordered_leds[0:2])
+                print("#" * 2)
             elif 1 > led_index > 0:
-                blink_leds(ordered_leds[0:1], .0001)
-                print("#"*1)
+                blink_leds(ordered_leds[0:1])
+                print("#" * 1)
