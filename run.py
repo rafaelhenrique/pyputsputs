@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 import sys
+import math
 
 import alsaaudio
 import audioop
@@ -61,8 +62,7 @@ def microphone(rate=44100, channel=1, periodsize=160):
     return mic
 
 if __name__ == "__main__":
-    ordered_leds = [board.pins[11], board.pins[10], board.pins[9],
-                    board.pins[6], board.pins[5], board.pins[3]]
+    ordered_leds = [board.pins[i] for i in [11, 10, 9, 6, 5, 3]]
     mode_pins_out(ordered_leds)
 
     mic = microphone()
@@ -72,7 +72,7 @@ if __name__ == "__main__":
             # if wave of max is 32 this is works
             # if not, you need recalibrate mic
             wave = audioop.max(data, 2) / 1000
-            led_index = int(wave / 6.) + 1
+            led_index = int(math.ceil(wave / 6.))
 
             blink_leds(ordered_leds[0:led_index], .0001)
             print("#" * led_index)
