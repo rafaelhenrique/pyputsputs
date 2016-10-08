@@ -20,20 +20,20 @@ When you use pingo/pyfirmata we need preload StandardFirmata on your board, on A
 ```"File" -> "Examples" -> "Firmata" -> "StandartFirmata"```
 
 
-## Arduino Setup
+## Arduino Assembly
 
 ![Arduino](https://raw.githubusercontent.com/akarokr/pyputsputs/master/contrib/draw.png "Arduino")
 
 ## Clone the project
 
 ```
-$ git clone git@github.com:rafaelhenrique/pingo_experiments.git
+$ git clone --recursive git@github.com:rafaelhenrique/pingo_experiments.git
 ```
 
-Create an virtualenv (I like the [virtualenv-wrapper](https://virtualenvwrapper.readthedocs.org/en/latest/ "virtualenv-wrapper")):
+Create an virtualenv (I prefer the [virtualenv-wrapper](https://virtualenvwrapper.readthedocs.org/en/latest/ "virtualenv-wrapper")):
 
 ```
-$ mkvirtualenv -p /usr/bin/python2.7 pyputsputs
+$ mkvirtualenv pyputsputs
 ```
 
 Enter on pingo-io directory and installs pingo ([recommended by developers](http://www.pingo.io/docs/#installing-from-github)). 
@@ -66,10 +66,3 @@ If you're having some problems with the StandardFirmata, add the SoftwareSerial 
 #include <SoftwareSerial.h>
 ```
 
-**pingo-io is empty**
-
-If the pingo-io is an empty directory, clone the ([project](https://github.com/pingo-io/pingo-py/tree/091192f0381cd107685b55a258024be8c88e38cc)) and then run the following commands:
-```
-$ cd pingo-io
-$ python setup.py develop
-```
